@@ -1,6 +1,14 @@
-.PHONY: all clean build
+.PHONY: all clean deps test build install
 
-build:
+all: clean deps test build
+
+deps:
+	go get -u github.com/stretchr/testify/assert
+
+test:
+	go test -v
+
+build: deps test
 	mkdir -p build
 	GOARCH=386 go build -ldflags="-s -w" -o build/masaba main.go
 

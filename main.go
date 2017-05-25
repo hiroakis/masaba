@@ -132,6 +132,10 @@ func tmpl() string {
 	return t
 }
 
+func nowString() string {
+	return time.Now().Format("2006-01-02 15:04:05")
+}
+
 func trafficHumanReadable(size float64) string {
 	var trafficUnits = []string{"B/s", "K/s", "M/s", "G/s", "T/s", "P/s", "E/s", "Z/s", "Y/s"}
 	return humanReadable(size, trafficUnits)
@@ -213,7 +217,7 @@ func main() {
 
 		t := template.New("t")
 		t.Funcs(template.FuncMap{
-			"now":                  func() string { return time.Now().Format("2006-01-02 15:04:05") },
+			"now":                  nowString,
 			"cpuDigits":            cpuDigits,
 			"memoryHumanReadable":  memoryHumanReadable,
 			"trafficHumanReadable": trafficHumanReadable,
