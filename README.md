@@ -1,6 +1,6 @@
 # masaba
 
-masaba(真鯖) is a tool to show Mackerel system metrics in your terminal. The tool wraps `mkr` command.
+masaba(真鯖) is a tool to show Mackerel system metrics in your terminal. The tool wraps [mkr](https://github.com/mackerelio/mkr) command because [mackerel-client-go](https://github.com/mackerelio/mackerel-client-go) is under development.
 
 ## Installation
 
