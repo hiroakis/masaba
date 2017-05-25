@@ -195,27 +195,27 @@ func main() {
 		}
 
 		for _, h := range hs {
-			if _, ok := v.(map[string]interface{})[h.ID].(map[string]interface{}); ok {
-				h.LA.Avg5 = v.(map[string]interface{})[h.ID].(map[string]interface{})["loadavg5"].(map[string]interface{})["value"].(float64)
+			if w, ok := v.(map[string]interface{})[h.ID].(map[string]interface{}); ok {
+				h.LA.Avg5 = w["loadavg5"].(map[string]interface{})["value"].(float64)
 
-				h.CPU.User = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.user.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.Nice = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.nice.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.System = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.system.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.Irq = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.irq.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.SoftIrq = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.softirq.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.IoWait = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.iowait.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.Steal = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.steal.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.Guest = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.guest.percentage"].(map[string]interface{})["value"].(float64)
-				h.CPU.Idle = v.(map[string]interface{})[h.ID].(map[string]interface{})["cpu.idle.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.User = w["cpu.user.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.Nice = w["cpu.nice.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.System = w["cpu.system.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.Irq = w["cpu.irq.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.SoftIrq = w["cpu.softirq.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.IoWait = w["cpu.iowait.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.Steal = w["cpu.steal.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.Guest = w["cpu.guest.percentage"].(map[string]interface{})["value"].(float64)
+				h.CPU.Idle = w["cpu.idle.percentage"].(map[string]interface{})["value"].(float64)
 
-				h.Memory.Used = v.(map[string]interface{})[h.ID].(map[string]interface{})["memory.used"].(map[string]interface{})["value"].(float64)
-				h.Memory.Buffers = v.(map[string]interface{})[h.ID].(map[string]interface{})["memory.buffers"].(map[string]interface{})["value"].(float64)
-				h.Memory.Cached = v.(map[string]interface{})[h.ID].(map[string]interface{})["memory.cached"].(map[string]interface{})["value"].(float64)
-				h.Memory.Total = v.(map[string]interface{})[h.ID].(map[string]interface{})["memory.total"].(map[string]interface{})["value"].(float64)
-				h.Memory.Free = v.(map[string]interface{})[h.ID].(map[string]interface{})["memory.free"].(map[string]interface{})["value"].(float64)
+				h.Memory.Used = w["memory.used"].(map[string]interface{})["value"].(float64)
+				h.Memory.Buffers = w["memory.buffers"].(map[string]interface{})["value"].(float64)
+				h.Memory.Cached = w["memory.cached"].(map[string]interface{})["value"].(float64)
+				h.Memory.Total = w["memory.total"].(map[string]interface{})["value"].(float64)
+				h.Memory.Free = w["memory.free"].(map[string]interface{})["value"].(float64)
 
-				h.Interface.RxBytes = v.(map[string]interface{})[h.ID].(map[string]interface{})["interface.eth0.rxBytes.delta"].(map[string]interface{})["value"].(float64)
-				h.Interface.TxBytes = v.(map[string]interface{})[h.ID].(map[string]interface{})["interface.eth0.txBytes.delta"].(map[string]interface{})["value"].(float64)
+				h.Interface.RxBytes = w["interface.eth0.rxBytes.delta"].(map[string]interface{})["value"].(float64)
+				h.Interface.TxBytes = w["interface.eth0.txBytes.delta"].(map[string]interface{})["value"].(float64)
 			}
 		}
 
