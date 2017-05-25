@@ -179,6 +179,10 @@ func main() {
 
 	for {
 		hs, err := getHosts(service, role)
+		if len(hs) == 0 {
+			fmt.Printf("Couldn't find hosts in service(%s):role(%s)\n", service, role)
+			return
+		}
 		if err != nil {
 			fmt.Println(err)
 			return
